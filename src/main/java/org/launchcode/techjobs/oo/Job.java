@@ -37,7 +37,8 @@ public class Job {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o== null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Job)) return false;
+//        if (o== null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
         return id == job.id;
 
@@ -103,13 +104,14 @@ public class Job {
 
     @Override
     public String toString() {
-        return "\n" +
+        String newline = System.lineSeparator();
+        return newline +
                 "ID: " + id +
-                "\nName: " + name +
-                "\nEmployer: " + employer.getValue() +
-                "\nLocation: " + location.getValue() +
-                "\nPosition Type: " + positionType.getValue() +
-                "\nCore Competency: " + coreCompetency.getValue() +
-                "\n";
+                newline + "Name: " + name +
+                newline + "Employer: " + employer.getValue() +
+                newline + "Location: " + location.getValue() +
+                newline + "Position Type: " + positionType.getValue() +
+                newline + "Core Competency: " + coreCompetency.getValue() +
+                newline ;
     }
 }

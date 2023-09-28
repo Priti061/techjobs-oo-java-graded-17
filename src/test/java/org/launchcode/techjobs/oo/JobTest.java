@@ -5,17 +5,19 @@ import static org.junit.Assert.*;
 
 public class JobTest {
     //TODO: Create your unit tests here
-    Job test1= new Job();
-    Job test2= new Job();
 
+
+// Verify that the IDs of the two objects are distinct.
     @Test
     public void testSettingJobId() {
         Job test1= new Job();
         Job test2= new Job();
-        assertEquals(test1.getId(), test2.getId(), 1);
+
         assertNotEquals(test1.getId(), test2.getId());
 
     }
+
+    // Use assertTrue and assertEquals statements to test that the constructor correctly assigns both the class and value of each field.
 
     @Test
     public void testJobConstructorSetsAllFields() {
@@ -46,7 +48,7 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
         Job test3= new Job("Product tester", new Employer("ACME"),new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertEquals('\n', test3.toString().charAt(0));
+        assertEquals('\n',test3.toString().charAt(0));
         assertEquals('\n', test3.toString().charAt(test3.toString().length()-1));
     }
 
@@ -64,6 +66,7 @@ public class JobTest {
         assertEquals ("\nID: " + test5.getId() + "\nName: Product tester\nEmployer: ACME\nLocation: Data not available\nPosition Type: Quality control\nCore Competency: Data not available\n" , test5.toString());
 
     }
+
 
 
 }
